@@ -1,0 +1,454 @@
+<!-- 
+  ZUNIGA'S PLUMBING INC. - REUSABLE STICKY HEADER 
+  
+  Usage:
+  1. Paste this entire snippet at the very top of your <body> tag on every page.
+  2. To set the active page, add the class "active" to the corresponding <a> tag in the navigation.
+  3. Ensure Montserrat and Inter fonts are loaded in your <head> (already included in this snippet via Google Fonts).
+-->
+
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
+
+<!-- Skip to Content for Accessibility -->
+<a href="#main-content" class="skip-to-content">Skip to content</a>
+
+<header id="main-header" class="site-header">
+  <div class="header-container">
+    <!-- Left: Logo & Icon -->
+    <a href="index.html" class="logo-container">
+      <svg class="wrench-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4-1.4l-1.6-1.6a1 1 0 0 0-1.4 0ZM11.23 8.35a3.5 3.5 0 0 0 0 4.95l7.07 7.07a1 1 0 1 0 1.42-1.42l-7.07-7.07a3.5 3.5 0 0 0-1.42-3.53Z" fill="currentColor"/>
+        <path d="M10.12 4.23a4.5 4.5 0 0 0-6.36 6.36l1.41 1.42a1 1 0 0 0 1.42-1.42l-1.41-1.41a2.5 2.5 0 1 1 3.53-3.53l1.42 1.41a1 1 0 0 0 1.41-1.41l-1.42-1.42ZM20.12 11.23a4.5 4.5 0 0 0-6.36-6.36l-1.42 1.41a1 1 0 0 0 1.42 1.42l1.41-1.41a2.5 2.5 0 1 1 3.54 3.53l-1.42 1.42a1 1 0 0 0 1.42 1.42l1.41-1.42Z" fill="currentColor"/>
+      </svg>
+      <span class="logo-text">Zuniga's Plumbing</span>
+    </a>
+
+    <!-- Center: Desktop Nav -->
+    <nav class="desktop-nav">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li class="dropdown">
+          <a href="services.html" class="dropdown-trigger">Services <svg class="chevron" viewBox="0 0 24 24" width="16" height="16"><path d="M7 10l5 5 5-5H7z" fill="currentColor"/></svg></a>
+          <ul class="dropdown-menu">
+            <li><a href="drain-cleaning.html">Drain Cleaning</a></li>
+            <li><a href="sewer-repair.html">Sewer Repair</a></li>
+            <li><a href="faucet-toilet.html">Faucet & Toilet</a></li>
+            <li><a href="grease-trap.html">Grease Trap</a></li>
+            <li><a href="water-main.html">Water Main</a></li>
+            <li><a href="emergency.html">Emergency</a></li>
+            <li><a href="appliance-install.html">Appliance Install</a></li>
+          </ul>
+        </li>
+        <li><a href="areas.html">Areas</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+
+    <!-- Right: Mobile Nav Toggle & Phone CTA -->
+    <div class="header-right">
+      <a href="tel:7736192730" class="phone-cta">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="white"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+        <span>(773) 619-2730</span>
+      </a>
+      <button id="menu-toggle" class="hamburger" aria-label="Toggle Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- Mobile Side Nav -->
+<div id="side-nav" class="side-nav">
+  <div class="side-nav-header">
+     <button id="menu-close" class="close-btn">&times;</button>
+  </div>
+  <ul class="mobile-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li>
+      <button class="mobile-dropdown-btn">Services <svg class="chevron" viewBox="0 0 24 24" width="20" height="20"><path d="M7 10l5 5 5-5H7z" fill="currentColor"/></svg></button>
+      <ul class="mobile-dropdown-content">
+        <li><a href="drain-cleaning.html">Drain Cleaning</a></li>
+        <li><a href="sewer-repair.html">Sewer Repair</a></li>
+        <li><a href="faucet-toilet.html">Faucet & Toilet</a></li>
+        <li><a href="grease-trap.html">Grease Trap</a></li>
+        <li><a href="water-main.html">Water Main</a></li>
+        <li><a href="emergency.html">Emergency</a></li>
+        <li><a href="appliance-install.html">Appliance Install</a></li>
+      </ul>
+    </li>
+    <li><a href="areas.html">Areas</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</div>
+<div id="nav-overlay" class="nav-overlay"></div>
+
+<style>
+  :root {
+    --primary-color: #1B3A5C;
+    --cta-color: #2E86C1;
+    --emergency-color: #E67E22;
+    --white: #FFFFFF;
+    --body-text: #333333;
+    --nav-height-desktop: 70px;
+    --nav-height-mobile: 60px;
+    --transition: all 0.3s ease;
+  }
+
+  /* Accessibility */
+  .skip-to-content {
+    position: absolute;
+    top: -100px;
+    left: 0;
+    background: var(--emergency-color);
+    color: white;
+    padding: 8px 16px;
+    z-index: 1001;
+    transition: top 0.3s;
+    font-family: 'Inter', sans-serif;
+    text-decoration: none;
+  }
+  .skip-to-content:focus {
+    top: 0;
+  }
+
+  /* Header Base */
+  .site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: var(--nav-height-desktop);
+    background: transparent; /* Changed to transparent, JS sets background on scroll */
+    z-index: 1000;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    font-family: 'Inter', sans-serif;
+  }
+
+  /* Sticky State */
+  .site-header.scrolled {
+    background: var(--white);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  }
+
+  .header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  /* Logo */
+  .logo-container {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: var(--primary-color);
+    gap: 10px;
+  }
+  .wrench-icon {
+    width: 32px;
+    height: 32px;
+    color: var(--cta-color);
+  }
+  .logo-text {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    font-size: 1.4rem;
+    letter-spacing: -0.5px;
+  }
+
+  /* Navigation */
+  .desktop-nav ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    padding: 0;
+    margin: 0;
+  }
+  .desktop-nav a {
+    text-decoration: none;
+    color: var(--primary-color);
+    font-weight: 600;
+    font-size: 0.95rem;
+    position: relative;
+    padding-bottom: 5px;
+    transition: var(--transition);
+  }
+  
+  /* Active Indicator */
+  .desktop-nav a.active::after,
+  .desktop-nav a:hover::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--cta-color);
+  }
+
+  /* Dropdown */
+  .dropdown {
+    position: relative;
+  }
+  .dropdown-trigger {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+  .dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: var(--white);
+    min-width: 200px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+    border-radius: 4px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: var(--transition);
+    list-style: none;
+    padding: 10px 0;
+    margin-top: 15px;
+  }
+  .dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+  .dropdown-menu li a {
+    display: block;
+    padding: 10px 20px;
+    font-weight: 500;
+  }
+  .dropdown-menu li a:hover {
+    background: #f8f9fa;
+    color: var(--cta-color);
+  }
+  .dropdown-menu li a::after {
+    display: none;
+  }
+
+  /* Header Right */
+  .header-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+
+  /* Phone CTA */
+  .phone-cta {
+    background: var(--emergency-color);
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 0.95rem;
+    transition: var(--transition);
+    box-shadow: 0 4px 10px rgba(230, 126, 34, 0.3);
+  }
+  .phone-cta:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(230, 126, 34, 0.4);
+    background: #d35400;
+  }
+
+  /* Hamburger */
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 6px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+  }
+  .hamburger span {
+    width: 28px;
+    height: 3px;
+    background: var(--primary-color);
+    border-radius: 2px;
+    transition: var(--transition);
+  }
+
+  /* Side Nav & Overlay */
+  .side-nav {
+    position: fixed;
+    top: 0;
+    right: -300px;
+    width: 300px;
+    height: 100%;
+    background: var(--white);
+    z-index: 1002;
+    transition: 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    box-shadow: -10px 0 30px rgba(0,0,0,0.1);
+    padding: 40px 30px;
+    overflow-y: auto;
+  }
+  .side-nav.open {
+    right: 0;
+  }
+  .nav-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    z-index: 1001;
+    opacity: 0;
+    visibility: hidden;
+    transition: var(--transition);
+  }
+  .nav-overlay.visible {
+    opacity: 1;
+    visibility: visible;
+  }
+  .side-nav-header {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 40px;
+  }
+  .close-btn {
+    font-size: 2rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--primary-color);
+  }
+  .mobile-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .mobile-links li {
+    margin-bottom: 25px;
+  }
+  .mobile-links a, .mobile-dropdown-btn {
+    text-decoration: none;
+    color: var(--primary-color);
+    font-weight: 700;
+    font-size: 1.2rem;
+    font-family: 'Montserrat', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    background: none;
+    border: none;
+    padding: 0;
+    text-align: left;
+    cursor: pointer;
+  }
+  .mobile-dropdown-content {
+    list-style: none;
+    padding-left: 15px;
+    margin-top: 15px;
+    display: none;
+  }
+  .mobile-dropdown-content.show {
+    display: block;
+  }
+  .mobile-dropdown-content li {
+    margin-bottom: 12px;
+  }
+  .mobile-dropdown-content a {
+    font-size: 1rem;
+    font-weight: 500;
+    font-family: 'Inter', sans-serif;
+  }
+
+  /* Responsive */
+  @media (max-width: 1024px) {
+    .desktop-nav {
+      display: none;
+    }
+    .hamburger {
+      display: flex;
+    }
+    .site-header {
+      background: var(--white);
+      height: var(--nav-height-mobile);
+    }
+  }
+
+  @media (max-width: 480px) {
+    .logo-text { font-size: 1.1rem; }
+    .phone-cta span { display: none; }
+    .phone-cta { padding: 10px; }
+  }
+</style>
+
+<script>
+  (function() {
+    const header = document.getElementById('main-header');
+    const menuToggle = document.getElementById('menu-toggle');
+    const menuClose = document.getElementById('menu-close');
+    const sideNav = document.getElementById('side-nav');
+    const overlay = document.getElementById('nav-overlay');
+    const mobileDropdownBtn = document.querySelector('.mobile-dropdown-btn');
+    const mobileDropdownContent = document.querySelector('.mobile-dropdown-content');
+
+    // Scroll Listener for Sticky Header Shadow
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) {
+        header.classList.add('scrolled');
+      } else {
+        // Only remove if not mobile (where it stays white) or if desired
+        if (window.innerWidth > 1024) {
+          header.classList.remove('scrolled');
+        }
+      }
+    });
+
+    // Mobile Menu Toggles
+    const openMenu = () => {
+      sideNav.classList.add('open');
+      overlay.classList.add('visible');
+      document.body.style.overflow = 'hidden';
+    };
+
+    const closeMenu = () => {
+      sideNav.classList.remove('open');
+      overlay.classList.remove('visible');
+      document.body.style.overflow = '';
+    };
+
+    menuToggle.addEventListener('click', openMenu);
+    menuClose.addEventListener('click', closeMenu);
+    overlay.addEventListener('click', closeMenu);
+
+    // Mobile Dropdown Toggle
+    if (mobileDropdownBtn) {
+      mobileDropdownBtn.addEventListener('click', () => {
+        mobileDropdownContent.classList.toggle('show');
+        mobileDropdownBtn.querySelector('.chevron').style.transform = 
+          mobileDropdownContent.classList.contains('show') ? 'rotate(180deg)' : 'rotate(0deg)';
+      });
+    }
+
+    // Initial check for desktop scroll state
+    if (window.scrollY > 50) {
+      header.classList.add('scrolled');
+    } else if (window.innerWidth <= 1024) {
+      header.classList.add('scrolled');
+    }
+  })();
+</script>
