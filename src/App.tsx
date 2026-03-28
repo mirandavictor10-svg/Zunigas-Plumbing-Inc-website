@@ -202,29 +202,54 @@ export default function App() {
                 v.currentTime = v.duration;
               }}
             />
-            {/* Dark gradient overlay — stronger on mobile for readability */}
-            <div className="absolute inset-0 bg-gradient-to-r from-brand-dark/90 via-brand-dark/65 to-brand-dark/40 md:to-transparent" />
+            {/* Dark gradient overlay — deepens as text appears for cinematic effect */}
+            <motion.div 
+              className="absolute inset-0 bg-gradient-to-r from-brand-dark/95 via-brand-dark/70 to-brand-dark/45 md:to-transparent" 
+              initial={{ opacity: 0.35 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 2.0, duration: 1.5 }}
+            />
           </motion.div>
 
           <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
-              <div className="text-white space-y-8 animate-blur-up">
-                <div className="inline-flex items-center gap-2 bg-brand-blue/20 backdrop-blur-md border border-brand-blue/30 px-4 py-2 rounded-full">
+              <div className="text-white space-y-8">
+                <motion.div 
+                  className="inline-flex items-center gap-2 bg-brand-blue/20 backdrop-blur-md border border-brand-blue/30 px-4 py-2 rounded-full"
+                  initial={{ opacity: 0, y: -10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.8, duration: 0.5 }}
+                >
                   <Zap className="size-3.5 text-amber-400" aria-hidden="true" />
                   <span className="text-xs font-bold uppercase tracking-widest">⚡ On-Site in Under 45 Minutes</span>
-                </div>
+                </motion.div>
 
-                <h1 className="font-serif text-5xl md:text-7xl lg:text-8xl leading-[0.95] tracking-tighter">
+                <motion.h1 
+                  className="font-serif text-5xl md:text-7xl lg:text-8xl leading-[0.95] tracking-tighter"
+                  initial={{ opacity: 0, y: 20, filter: 'blur(8px)' }}
+                  animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+                  transition={{ delay: 1.0, duration: 1.2, ease: "easeOut" }}
+                >
                   Chicago's <br />
                   Most <br />
                   <span className="italic text-brand-blue">Trusted</span> Plumber
-                </h1>
+                </motion.h1>
 
-                <p className="text-lg md:text-xl text-white/70 max-w-lg font-light leading-relaxed">
+                <motion.p 
+                  className="text-lg md:text-xl text-white/70 max-w-lg font-light leading-relaxed"
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 2.5, duration: 1.0 }}
+                >
                   Burst pipe at 2 AM? Clogged drain before guests arrive? We've solved {COMPANY_INFO.jobsCompleted} emergencies across Chicago with transparent pricing and zero surprise fees. Licensed, bonded, and rated {COMPANY_INFO.googleRating}★ on Google.
-                </p>
+                </motion.p>
 
-                <div className="flex flex-col sm:flex-row gap-4">
+                <motion.div 
+                  className="flex flex-col sm:flex-row gap-4"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ delay: 3.0, duration: 0.8 }}
+                >
                   <a
                     href={`tel:${COMPANY_INFO.phone.replace(/\D/g, '')}`}
                     className="group flex items-center justify-center gap-3 bg-white text-brand-dark px-8 py-5 rounded-full text-lg font-bold hover:bg-brand-blue hover:text-white transition-all transform hover:scale-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-white motion-reduce:hover:scale-100"
@@ -236,14 +261,28 @@ export default function App() {
                   <a href="#contact" className="flex items-center justify-center gap-2 text-white/70 hover:text-white transition-colors text-sm font-medium underline underline-offset-4">
                     Request a Callback
                   </a>
-                </div>
+                </motion.div>
               </div>
 
               {/* Estimate Form */}
               <motion.div
-                initial={{ opacity: 0, x: 20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: 0.4, duration: 0.8 }}
+                initial={{ opacity: 0, x: 40 }}
+                animate={{ 
+                  opacity: [0, 0.35, 1],
+                  x: 0 
+                }}
+                transition={{ 
+                  delay: 2.5, 
+                  duration: 2.0, 
+                  ease: "easeOut",
+                  opacity: {
+                    times: [0, 0.75, 1],
+                    duration: 2.0
+                  },
+                  x: {
+                    duration: 1.2
+                  }
+                }}
                 className="bg-white/10 backdrop-blur-2xl border border-white/20 p-8 rounded-3xl shadow-2xl max-w-md ml-auto"
               >
                 <h3 className="text-2xl font-serif text-white mb-2" id="estimate-form-title">Get Your Free Estimate</h3>
