@@ -239,7 +239,7 @@ export default function App() {
                   className="text-lg md:text-xl text-white/70 max-w-lg font-light leading-relaxed"
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 2.5, duration: 1.0 }}
+                  transition={{ delay: 3.5, duration: 1.0 }}
                 >
                   Burst pipe at 2 AM? Clogged drain before guests arrive? We've solved {COMPANY_INFO.jobsCompleted} emergencies across Chicago with transparent pricing and zero surprise fees. Licensed, bonded, and rated {COMPANY_INFO.googleRating}★ on Google.
                 </motion.p>
@@ -248,7 +248,7 @@ export default function App() {
                   className="flex flex-col sm:flex-row gap-4"
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
-                  transition={{ delay: 3.0, duration: 0.8 }}
+                  transition={{ delay: 4.0, duration: 0.8 }}
                 >
                   <a
                     href={`tel:${COMPANY_INFO.phone.replace(/\D/g, '')}`}
@@ -267,21 +267,11 @@ export default function App() {
               {/* Estimate Form */}
               <motion.div
                 initial={{ opacity: 0, x: 40 }}
-                animate={{ 
-                  opacity: [0, 0.35, 1],
-                  x: 0 
-                }}
+                animate={{ opacity: 1, x: 0 }}
                 transition={{ 
-                  delay: 2.5, 
+                  delay: 3.5, 
                   duration: 2.0, 
-                  ease: "easeOut",
-                  opacity: {
-                    times: [0, 0.75, 1],
-                    duration: 2.0
-                  },
-                  x: {
-                    duration: 1.2
-                  }
+                  ease: "easeOut"
                 }}
                 className="bg-white/10 backdrop-blur-2xl border border-white/20 p-8 rounded-3xl shadow-2xl max-w-md ml-auto"
               >
