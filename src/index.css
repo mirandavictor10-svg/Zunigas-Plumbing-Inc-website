@@ -33,3 +33,8 @@ body {
   to   { opacity: 1; filter: blur(0);   transform: translateY(0); }
 }
 .animate-blur-up { animation: blurUp 1s ease-out forwards; }
+
+/* Sticky mobile CTA safe area for notched phones */
+.safe-area-bottom {
+  padding-bottom: max(0.75rem, env(safe-area-inset-bottom));
+}
