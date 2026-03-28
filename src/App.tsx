@@ -5,8 +5,8 @@
  * Zuniga's Plumbing Inc. — Optimized website template
  */
 
-import { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { useState, useEffect, useRef } from 'react';
+import { motion, AnimatePresence, useScroll, useTransform } from 'framer-motion';
 import {
   Phone,
   ShieldCheck,
@@ -79,6 +79,15 @@ export default function App() {
   const [submitted, setSubmitted] = useState(false);
   const [openFaq, setOpenFaq] = useState<number | null>(null);
   const { register, handleSubmit, formState: { errors } } = useForm();
+
+  // Scroll-driven video hero
+  const heroRef = useRef<HTMLElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: heroRef,
+    offset: ['start start', 'end start'],
+  });
+  const videoOpacity = useTransform(scrollYProgress, [0, 0.65], [1, 0]);
+  const videoScale = useTransform(scrollYProgress, [0, 0.65], [1, 1.08]);
 
   useEffect(() => {
     document.body.style.overflow = isMenuOpen ? 'hidden' : '';
@@ -171,18 +180,31 @@ export default function App() {
 
       {/* Hero Section */}
       <main id="main-content">
-        <section className="relative h-screen min-h-[700px] flex items-center pt-20">
-          <div className="absolute inset-0 z-0">
-            <img
-              src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&q=80&w=2000"
-              alt="Professional plumbing work in a modern Chicago home"
+        <section ref={heroRef} className="relative h-screen min-h-[700px] flex items-center pt-20">
+          {/* Scroll-driven video background */}
+          <motion.div
+            className="absolute inset-0 z-0"
+            style={{ opacity: videoOpacity, scale: videoScale }}
+          >
+            <video
               className="w-full h-full object-cover"
-              width="2000" height="1333"
-              fetchPriority="high"
-              referrerPolicy="no-referrer"
+              src="/plumbing-transition.mp4"
+              autoPlay
+              muted
+              playsInline
+              loop={false}
+              preload="auto"
+              poster=""
+              aria-hidden="true"
+              onEnded={(e) => {
+                // freeze on last frame after video ends
+                const v = e.currentTarget;
+                v.currentTime = v.duration;
+              }}
             />
-            <div className="absolute inset-0 bg-gradient-to-r from-brand-dark/90 via-brand-dark/60 to-transparent" />
-          </div>
+            {/* Dark gradient overlay — stronger on mobile for readability */}
+            <div className="absolute inset-0 bg-gradient-to-r from-brand-dark/90 via-brand-dark/65 to-brand-dark/40 md:to-transparent" />
+          </motion.div>
 
           <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
